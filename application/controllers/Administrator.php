@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Pengaduan extends CI_Controller {
+class Administrator extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -18,13 +18,14 @@ class Pengaduan extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see https://codeigniter.com/userguide3/general/urls.html
 	 */
-	public function nonvalid()
+	public function index()
 	{
 		$this->load->view('layout/header');
 		$this->load->view('layout/topbar');
 		$this->load->view('layout/sidebar');
-		$this->load->view('verifikasi/nonvalid');
+		$this->load->view('administrator/daftar_petugas');
 		$this->load->view('layout/footer');
 	}
+
 
 }

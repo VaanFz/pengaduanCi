@@ -27,13 +27,5 @@ class Dashboard extends CI_Controller {
 		$this->load->view('layout/footer');
 	}
 
-	public function nonvalid()
-	{
-		$this->load->view('layout/header');
-		$this->load->view('layout/topbar');
-		$this->load->view('layout/sidebar');
-		$this->load->view('verifikasi/nonvalid');
-		$this->load->view('layout/footer');
-	}
 
 }

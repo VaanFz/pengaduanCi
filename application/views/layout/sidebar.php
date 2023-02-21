@@ -25,7 +25,7 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
           <li class="nav-item">
-            <a href="" class="nav-link">
+            <a href="<?= base_url('dashboard');?>" class="nav-link">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
                 Dashboard
@@ -33,10 +33,32 @@
               </p>
             </a>
           </li>
+          
+          <li class="nav-header">Administrator</li>
+          <li class="nav-item">
+            <a href="<?= base_url('Administrator');?>" class="nav-link">
+              <i class="nav-icon fas fa-users"></i>
+              <p>
+                Daftar Anggota
+                <span class="right badge badge-danger"></span>
+              </p>
+            </a>
+          </li>
+          <li class="nav-header">Aduan Masyarakat</li>
+          <li class="nav-item">
+            <a href="<?= base_url('Aduan');?>" class="nav-link">
+              <i class="nav-icon fas fa-bullhorn"></i>
+              <p>
+                Aduan
+                <span class="right badge badge-danger"></span>
+              </p>
+            </a>
+          </li>
+
           <li class="nav-header">Pengaduan</li>
           <li class="nav-item">
             <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-copy"></i>
+              <i class="nav-icon fas fa-edit"></i>
               <p>
                 Daftar Pengaduan
                 <i class="fas fa-angle-left right"></i>
@@ -45,31 +67,32 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="<?= base_url('Pengaduan/nonvalid');?>" class="nav-link">
+                <a href="<?= base_url('Nonvalid');?>" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Pengaduan Nonvalid</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="" class="nav-link">
+                <a href="<?= base_url('Valid');?>" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Pengaduan Valid</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/layout/boxed.html" class="nav-link">
+                <a href="<?= base_url('Proses');?>" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Pengaduan Proses</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/layout/fixed-sidebar.html" class="nav-link">
+                <a href="<?= base_url('Selesai');?>" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>pengaduan Selesai</p>
                 </a>
               </li>
             </ul>
           </li>
+
           <li class="nav-header">Generate Laporan</li>
           <li class="nav-item">
             <a href="" class="nav-link">

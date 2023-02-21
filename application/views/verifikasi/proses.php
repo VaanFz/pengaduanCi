@@ -5,12 +5,12 @@
 		<div class="container-fluid">
 			<div class="row mb-2">
 				<div class="col-sm-6">
-					<h1>Pengaduan Nonvalid</h1>
+					<h1>Pengaduan Proses</h1>
 				</div>
 				<div class="col-sm-6">
 					<ol class="breadcrumb float-sm-right">
 						<li class="breadcrumb-item"><a href="<?= base_url('dashboard');?>">Home</a></li>
-						<li class="breadcrumb-item active">Nonvalid</li>
+						<li class="breadcrumb-item active">Proses</li>
 					</ol>
 				</div>
 			</div>
@@ -37,21 +37,24 @@
 										<th>Foto Penunjang</th>
 										<th>Isi Aduan</th>
 										<th>Status</th>
+										<th>Tanggapan</th>
 										<th>Verifikasi</th>
 									</tr>
 								</thead>
 								<tbody>
-									
 									<tr>
 										<td>1</td>
 										<td>Irfan  Fauziah</td>
-										<td>09-10-2023</td>
+										<td>11-08-2023</td>
 										<td>Ini Foto</td>
 										<td>Wifinya lag</td>
-										<td>Belum valid</td>
+										<td>Proses</td>
 										<td>
-                      <a class="btn btn-success" href="">Validasi</a>
-                    </td>
+                                            <a class="btn btn-danger" href="">Tanggapan</a>
+                                        </td>
+										<td>
+                                            <a class="btn btn-success" href="">Proses Selesai</a>
+                                        </td>
 									</tr>
 
 								</tbody>
@@ -70,5 +73,4 @@
 	<!-- /.content -->
 </div>
 <!-- /.content-wrapper -->
-
 

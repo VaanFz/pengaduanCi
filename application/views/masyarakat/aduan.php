@@ -28,16 +28,38 @@
 					<div class="card">
 						<!-- /.card-header -->
 						<div class="card-body">
+
+                            <div class="form-group">
+                                <label>Foto Laporan</label>
+
+                                <div class="input-group">
+                                    <button type="button" class="btn btn-default float-right" id="daterange-btn">
+                                    <i class="far fa-file-alt"></i> Pilih Foto
+                                    <i class="fas fa-caret-down"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Isi Aduan</label>
+                                <textarea class="form-control" rows="3" placeholder="Aduan Anda ..."></textarea>
+                            </div>
+                            <div>
+                                <tr>
+                                    <td>
+                                        <button type="button" class="btn btn-block btn-danger">Adukan</button>
+                                    </td>
+                                </tr>
+                            </div>
+                            <br>
 							<table id="example1" class="table table-bordered table-striped">
 								<thead>
 									<tr>
 										<th>No</th>
 										<th>Nama Pengadu</th>
-										<th>Tanggal Pengaduan</th>
-										<th>Foto Penunjang</th>
+										<th>Tanggal Aduan</th>
+										<th>Foto Laporan</th>
 										<th>Isi Aduan</th>
 										<th>Status</th>
-										<th>Verifikasi</th>
 									</tr>
 								</thead>
 								<tbody>
@@ -49,9 +71,7 @@
 										<td>Ini Foto</td>
 										<td>Wifinya lag</td>
 										<td>Belum valid</td>
-										<td>
-                      <a class="btn btn-success" href="">Validasi</a>
-                    </td>
+										
 									</tr>
 
 								</tbody>
@@ -70,5 +90,4 @@
 	<!-- /.content -->
 </div>
 <!-- /.content-wrapper -->
-
 
