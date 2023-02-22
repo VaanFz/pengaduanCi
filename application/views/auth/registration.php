@@ -56,15 +56,9 @@
                     </select>
                 </div>
                 <div class="row">
-                    <!-- /.col -->
-                    <div class="col-4">
-                        <button type="submit" class="btn btn-primary btn-block">Register</button>
-                    </div>
-                    <!-- /.col -->
+                        <a class="btn btn-success" href="<?= base_url('Administrator') ?>">Kembali <i class="fa fa-users"></i></a>
                 </div>
-                <br>
             </form>
-            <a href="<?= base_url('Auth');?>" class="text-center">Sudah Punya akun? Login Disini</a>
         </div>
         <!-- /.form-box -->
     </div><!-- /.card -->

@@ -46,7 +46,7 @@
                             <div>
                                 <tr>
                                     <td>
-                                        <button type="button" class="btn btn-block btn-danger">Adukan</button>
+                                        <button type="button" class="btn btn-block btn-success">Adukan</button>
                                     </td>
                                 </tr>
                             </div>

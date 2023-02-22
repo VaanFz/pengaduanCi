@@ -8,15 +8,17 @@
 
             <?= $this->session->flashdata('message'); ?>
 
-            <form action="" method="post">
+            <form action="<?= base_url('Auth');?>" method="post">
+            <?= form_error('username','<small class="text-danger">','</small>');?>
                 <div class="input-group mb-3">
-                    <input type="text" class="form-control" placeholder="Username" name="username">
+                    <input type="text" class="form-control" placeholder="Username" name="username" value="<?= set_value('username');?>">
                     <div class="input-group-append">
                         <div class="input-group-text">
                             <span class="fas fa-envelope"></span>
                         </div>
                     </div>
                 </div>
+                <?= form_error('password','<small class="text-danger">','</small>');?>
                 <div class="input-group mb-3">
                     <input type="password" class="form-control" placeholder="Password" name="password">
                     <div class="input-group-append">
@@ -32,9 +34,7 @@
                     <br>
                 </div>
             </form>
-            <p class="mb-0">
-                <a href="<?= base_url('Auth/registration');?>" class="text-center">Belum Punya Akun? Registrasi</a>
-            </p>
+            
         </div>
         <!-- /.card-body -->
     </div>

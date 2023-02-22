@@ -27,9 +27,10 @@
 
 					<div class="card">
 						<div class="card-header">
-							<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-default">
+							<!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-default">
 								Registrasi Petugas
-							</button>
+							</button> -->
+							<a class="btn btn-primary" href="<?= base_url('Auth/registration') ?>">Registrasi <i class="fa fa-users"></i></a>
 						</div>
 						<!-- /.card-header -->
 						<div class="card-body">

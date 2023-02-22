@@ -12,9 +12,52 @@ class Auth extends CI_Controller {
 	 
     public function index()
 	{
-		$this->load->view('template/auth-header');
-		$this->load->view('auth/login');
-		$this->load->view('template/auth-footer');
+		$this->form_validation->set_rules('username', 'Username', 'required|trim',['required' => 'Username Tdak Boleh Kosong']);
+		$this->form_validation->set_rules('password', 'Password', 'required|trim',['required' => 'Password Tdak Boleh Kosong']);
+		if ($this->form_validation->run() == false) {
+			$this->load->view('template/auth-header');
+			$this->load->view('auth/login');
+			$this->load->view('template/auth-footer');
+		} else {
+			//validasi sukses
+			$this->_login();
+		}
+	}
+
+	private function _login()
+	{
+		$username = $this->input->post('username');
+		$password = $this->input->post('password');
+
+		$petugas = $this->db->get_where('petugas', ['username' => $username])->row_array();
+		// var_dump($petugas);
+		// die;
+		if($petugas) {
+			//petugas ada
+			if(password_verify($password, $petugas['password'])) {
+				$data = [
+					'username' => $petugas['username'],
+					'level' => $petugas['level'],
+				];
+				$this->session->set_userdata($data);
+				if ($petugas['level'] == 'admin') {
+					redirect('Dashboard');
+				} elseif ($petugas['level'] == 'petugas') {
+					redirect('Dashboard');
+				} else {
+					redirect('Auth');
+				}
+				redirect('Dashboard');
+			} else {
+				// var_dump($petugas);
+				// die;
+				$this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert"> Password anda salah <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>');
+				return redirect('Auth');
+			}
+		} else {
+			$this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert"> Username tidak ada <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>');
+			return redirect('Auth');
+		}
 	}
 	
 	public function registration()
@@ -42,5 +85,12 @@ class Auth extends CI_Controller {
 			redirect('auth');
 		}
 		
+	}
+
+	public function logout()
+	{
+		$this->session->unset_userdata('username');
+		$this->session->unset_userdata('level');
+		redirect('Auth');
 	}
 }
