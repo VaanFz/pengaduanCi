@@ -6,11 +6,21 @@
         <div class="card-body">
             <p class="login-box-msg"></p>
 
-            <form action="<?= base_url('Auth/registration');?>" method="post">
-                <?= form_error('nama_petugas','<small class="text-danger">','</small>');?>
+            <form action="<?= base_url('masyarakat/registration');?>" method="post">
+                <?= form_error('nik','<small class="text-danger">','</small>');?>
                 <div class="input-group mb-3">
-                    <input type="text" class="form-control" placeholder="Name Lengkap" name="nama_petugas"
-                        value="<?= set_value('nama_petugas');?>">
+                    <input type="number" class="form-control" placeholder="Nomor Induk" name="nik"
+                    value="<?= set_value('nik');?>">
+                    <div class=" input-group-append">
+                        <div class="input-group-text">
+                            <span class="fas fa-user"></span>
+                        </div>
+                    </div>
+                </div>
+                <?= form_error('nama','<small class="text-danger">','</small>');?>
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" placeholder="Name Lengkap" name="nama"
+                        value="<?= set_value('nama');?>">
                     <div class=" input-group-append">
                         <div class="input-group-text">
                             <span class="fas fa-user"></span>
@@ -48,16 +58,9 @@
                     </div>
                 </div>
 
-                <div class="input-group mb-3">
-                    <select class="form-control select2" name="level" style=" width: 100%;">
-                        <option selected=" selected">- Level - </option>
-                        <option value="admin">Admin</option>
-                        <option value="petugas">Petugas</option>
-                    </select>
-                </div>
-                <div class="row">
-                    <button type="submit" class="btn btn-primary btn-block">Registrasi</button>
-                </div>
+                <div class="">
+                        <button type="submit" class="btn btn-primary btn-block">registrasi</button>
+                    </div>
             </form>
         </div>
         <!-- /.form-box -->

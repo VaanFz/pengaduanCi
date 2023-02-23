@@ -82,7 +82,7 @@ class Auth extends CI_Controller {
 			];
 			$this->db->insert('petugas',$data);
 			$this->session->set_flashdata('message', '<div class="alert alert-success" role="alert"> Akun Beerhasil Dibuat! Silahkan Login <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>');
-			redirect('auth');
+			redirect('Administrator');
 		}
 		
 	}
@@ -91,6 +91,6 @@ class Auth extends CI_Controller {
 	{
 		$this->session->unset_userdata('username');
 		$this->session->unset_userdata('level');
-		redirect('Auth');
+		redirect('Masyarakat');
 	}
 }

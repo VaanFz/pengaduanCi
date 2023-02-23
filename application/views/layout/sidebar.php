@@ -22,77 +22,78 @@
       <!-- Sidebar Menu -->
       <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-          <!-- Add icons to the links using the .nav-icon class
-               with font-awesome or any other icon font library -->
-          <li class="nav-item">
-            <a href="<?= base_url('dashboard');?>" class="nav-link">
-              <i class="nav-icon fas fa-tachometer-alt"></i>
-              <p>
-                Dashboard
-                <span class="right badge badge-danger"></span>
-              </p>
-            </a>
-          </li>
+          <?php if ($this->session->userdata('username') && $this->session->userdata('level') == NULL) { ?>
+            </li>
+              <li class="nav-header">Aduan Masyarakat</li>
+              <li class="nav-item">
+                <a href="<?= base_url('Aduan');?>" class="nav-link">
+                  <i class="nav-icon fas fa-bullhorn"></i>
+                  <p>
+                    Aduan
+                    <span class="right badge badge-danger"></span>
+                  </p>
+                </a>
+            </li>
+          <?php } elseif ($this->session->userdata('level') == 'admin' OR $this->session->userdata('level') == 'petugas') {?>
+                <li class="nav-item">
+                <a href="<?= base_url('dashboard');?>" class="nav-link">
+                  <i class="nav-icon fas fa-tachometer-alt"></i>
+                  <p>
+                    Dashboard
+                    <span class="right badge badge-danger"></span>
+                  </p>
+                </a>
+              </li>
+              <li class="nav-header">Pengaduan</li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="nav-icon fas fa-edit"></i>
+                  <p>
+                    Daftar Pengaduan
+                    <i class="fas fa-angle-left right"></i>
+                    <span class="badge badge-info right"></span>
+                  </p>
+                </a>
+                <ul class="nav nav-treeview">
+                  <li class="nav-item">
+                    <a href="<?= base_url('Nonvalid');?>" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Pengaduan Nonvalid</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="<?= base_url('Valid');?>" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Pengaduan Valid</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="<?= base_url('Proses');?>" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Pengaduan Proses</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="<?= base_url('Selesai');?>" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>pengaduan Selesai</p>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+          <?php if ($this->session->userdata('level') == 'admin') {?>
+            
           
           <li class="nav-header">Administrator</li>
           <li class="nav-item">
             <a href="<?= base_url('Administrator');?>" class="nav-link">
               <i class="nav-icon fas fa-users"></i>
               <p>
-                Daftar Anggota
+                Daftar Petugas
                 <span class="right badge badge-danger"></span>
               </p>
             </a>
           </li>
-          <li class="nav-header">Aduan Masyarakat</li>
-          <li class="nav-item">
-            <a href="<?= base_url('Aduan');?>" class="nav-link">
-              <i class="nav-icon fas fa-bullhorn"></i>
-              <p>
-                Aduan
-                <span class="right badge badge-danger"></span>
-              </p>
-            </a>
-          </li>
-
-          <li class="nav-header">Pengaduan</li>
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-edit"></i>
-              <p>
-                Daftar Pengaduan
-                <i class="fas fa-angle-left right"></i>
-                <span class="badge badge-info right"></span>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="<?= base_url('Nonvalid');?>" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Pengaduan Nonvalid</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="<?= base_url('Valid');?>" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Pengaduan Valid</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="<?= base_url('Proses');?>" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Pengaduan Proses</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="<?= base_url('Selesai');?>" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>pengaduan Selesai</p>
-                </a>
-              </li>
-            </ul>
-          </li>
-
           <li class="nav-header">Generate Laporan</li>
           <li class="nav-item">
             <a href="" class="nav-link">
@@ -103,6 +104,9 @@
               </p>
             </a>
           </li>
+          <?php } ?>
+          <?php } ?>
+
       </nav>
       <!-- /.sidebar-menu -->
     </div>

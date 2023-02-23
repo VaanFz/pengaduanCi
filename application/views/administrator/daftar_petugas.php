@@ -42,7 +42,6 @@
 										<th>Username</th>
 										<th>Telepon</th>
 										<th>Jabatan</th>
-										<th>Aksi</th>
 									</tr>
 								</thead>
 								<tbody>
@@ -52,15 +51,6 @@
                                         <td>VaanFz</td>
                                         <td>08497390902</td>
                                         <td>Admin</td>
-                                        <td>
-											<a class="btn btn-warning"
-												href="<?= base_url('') ?>"><i
-													class="fa fa-edit"></i></a>
-											<a class="btn btn-danger"
-												href="<?= base_url('') ?>"
-												onclick="return confirm('Apakah Anda ingin menghapus data : ()');"><i
-													class="fa fa-trash"></i></a>
-										</td>
                                     </tr>
 								</tbody>
 							</table>
